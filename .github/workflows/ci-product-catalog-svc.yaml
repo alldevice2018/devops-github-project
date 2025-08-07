@@ -15,7 +15,7 @@ jobs:
         with:
           sparse-checkout: |
             src/product-catalog
-            sparse-checkout-cone-mode: false
+          sparse-checkout-cone-mode: false
 
       - name: Setup Go 1.22
         uses: actions/setup-go@v2
@@ -42,7 +42,7 @@ jobs:
         with:
           sparse-checkout: |
             src/product-catalog
-            sparse-checkout-cone-mode: false
+          sparse-checkout-cone-mode: false
 
       - name: setup Go 1.22
         uses: actions/setup-go@v2
@@ -67,7 +67,7 @@ jobs:
         with:
           sparse-checkout: |
             src/product-catalog
-            sparse-checkout-cone-mode: false
+          sparse-checkout-cone-mode: false
 
       - name: install Docker Buildx
         uses: docker/setup-buildx-action@v2
