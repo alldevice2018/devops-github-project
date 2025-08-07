@@ -58,18 +58,18 @@ jobs:
       - name: install Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Log in to Amazon ECR
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ steps.login-ecr.outputs.registry }}
-          ecr: auto
-
-      #   - name: Login to Docker Hub
+      #   - name: Log in to Amazon ECR
       #     uses: docker/login-action@v3
       #     with:
-      #       username: ${{ secrets.DOCKER_USERNAME }}
-      #       password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-      #       logout: true
+      #       registry: ${{ steps.login-ecr.outputs.registry }}
+      #       ecr: auto
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+          logout: true
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
