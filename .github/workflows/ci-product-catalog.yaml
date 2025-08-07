@@ -70,12 +70,12 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: src/product-catalog
-          push: false
-          file: src/product-catalog/Dockerfile
-          tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:latest
-
-      - name: Push to Dcoker Hub
-        uses: docker/build-push-action@v6
-        with:
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/product-catalog:${{github.run_id}}
+          file: src/product-catalog/Dockerfile
+          tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}
+
+      # - name: Push to Dcoker Hub
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     push: true
+      #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/product-catalog:${{github.run_id}}
